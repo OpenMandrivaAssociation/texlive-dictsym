@@ -1,3 +1,9 @@
+# revision 20031
+# category Package
+# catalog-ctan /fonts/dictsym
+# catalog-date 2007-09-25 10:20:14 +0200
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-dictsym
 Version:	20070925
 Release:	1
@@ -47,6 +53,7 @@ makes the symbols accessible as LaTeX commands.
 %doc %{_texmfdistdir}/doc/fonts/dictsym/README
 %doc %{_texmfdistdir}/doc/fonts/dictsym/dictsym.pdf
 %doc %{_texmfdistdir}/doc/fonts/dictsym/dictsym.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,3 +64,5 @@ makes the symbols accessible as LaTeX commands.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
