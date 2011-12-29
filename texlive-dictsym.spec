@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 This directory contains the DictSym Type1 font designed by
@@ -27,20 +25,12 @@ the Unix or PC platforms. The font provides a number of symbols
 commonly used in dictionaries. The accompanying macro package
 makes the symbols accessible as LaTeX commands.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -54,7 +44,6 @@ makes the symbols accessible as LaTeX commands.
 %doc %{_texmfdistdir}/doc/fonts/dictsym/README
 %doc %{_texmfdistdir}/doc/fonts/dictsym/dictsym.pdf
 %doc %{_texmfdistdir}/doc/fonts/dictsym/dictsym.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -65,5 +54,3 @@ makes the symbols accessible as LaTeX commands.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
