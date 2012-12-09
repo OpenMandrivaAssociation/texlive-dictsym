@@ -54,3 +54,17 @@ makes the symbols accessible as LaTeX commands.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20070925-2
++ Revision: 750956
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20070925-1
++ Revision: 718229
+- texlive-dictsym
+- texlive-dictsym
+- texlive-dictsym
+- texlive-dictsym
+
