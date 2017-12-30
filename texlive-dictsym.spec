@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-dictsym
-Version:	20070925
-Release:	10
+Version:	20170414
+Release:	1
 Summary:	DictSym font and macro package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/dictsym
