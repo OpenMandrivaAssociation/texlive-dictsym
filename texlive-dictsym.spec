@@ -1,18 +1,12 @@
-# revision 20031
-# category Package
-# catalog-ctan /fonts/dictsym
-# catalog-date 2007-09-25 10:20:14 +0200
-# catalog-license lppl
-# catalog-version undef
 Name:		texlive-dictsym
-Version:	20190228
+Version:	20031
 Release:	1
 Summary:	DictSym font and macro package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/dictsym
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ commonly used in dictionaries. The accompanying macro package
 makes the symbols accessible as LaTeX commands.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -47,24 +41,10 @@ makes the symbols accessible as LaTeX commands.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20070925-2
-+ Revision: 750956
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20070925-1
-+ Revision: 718229
-- texlive-dictsym
-- texlive-dictsym
-- texlive-dictsym
-- texlive-dictsym
-
