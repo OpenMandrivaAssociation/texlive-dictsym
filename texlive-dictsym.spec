@@ -1,6 +1,6 @@
 Name:		texlive-dictsym
 Version:	20031
-Release:	1
+Release:	2
 Summary:	DictSym font and macro package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/dictsym
