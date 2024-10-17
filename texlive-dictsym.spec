@@ -3,7 +3,7 @@ Version:	20031
 Release:	2
 Summary:	DictSym font and macro package
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/dictsym
+URL:		https://www.ctan.org/tex-archive/fonts/dictsym
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.doc.r%{version}.tar.xz
