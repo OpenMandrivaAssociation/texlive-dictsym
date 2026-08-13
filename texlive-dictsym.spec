@@ -13,7 +13,8 @@ Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dictsym.doc.r%{t
 BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(psnfss)
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 This directory contains the DictSym Type1 font designed by Georg
@@ -22,3 +23,10 @@ platforms. The font provides a number of symbols commonly used in
 dictionaries. The accompanying macro package makes the symbols
 accessible as LaTeX commands.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from dictsym:
+Map dictsym.map
+TL_DROPIN_EOF
